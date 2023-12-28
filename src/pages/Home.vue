@@ -33,6 +33,11 @@ const ingredient = ref(null);
 						/>
 					</el-select>
 				</div>
+				<div class="text">
+					Try our delicious cocktail recipes for every occasion. Find delicious
+					cocktail recipes by ingredient through our cocktail generator.
+				</div>
+				<img src="../assets/images/coctails.png" alt="Cocktails" class="img" />
 			</div>
 		</div>
 	</AppLayout>
@@ -55,4 +60,18 @@ const ingredient = ref(null);
 
 .select
 	width: 13.75rem
+
+.text
+	max-width: 516px
+	margin: 0 auto
+	font-family: 'Raleway'
+	font-size: 1rem
+	padding-top: 3.125rem
+	line-height: 2.25rem
+	font-weight: 400
+	letter-spacing: .1rem
+	color: $text_muted
+
+.img
+	margin-top: 3.75rem
 </style>
