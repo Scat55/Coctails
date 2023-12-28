@@ -4,7 +4,7 @@ import { INGREDIENTS_URL, COCKTAILS_BY_INGREDIENT_URL } from '../constans';
 
 interface RootState {
 	ingredients: { strIngredient1: string }[]; // Замените на фактический тип
-	cocktails: string[];
+	cocktails: object;
 }
 
 interface RootActions {
