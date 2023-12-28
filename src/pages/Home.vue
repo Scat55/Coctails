@@ -1,10 +1,15 @@
 <script setup lang="ts">
 import AppLayout from '@/components/AppLayout.vue';
 import { useRootStore } from '@/stores/root';
+import { storeToRefs } from 'pinia';
+import { ref } from 'vue';
 
 const rootStore = useRootStore();
 
 rootStore.getIngredients();
+
+const { ingredients } = storeToRefs(rootStore);
+const ingredient = ref(null);
 </script>
 
 <template>
@@ -13,6 +18,21 @@ rootStore.getIngredients();
 			<div class="info">
 				<div class="title">Choose your drink</div>
 				<div class="line"></div>
+				<div class="select-wrapper">
+					<el-select
+						v-model="ingredient"
+						placeholder="Choose main ingredient"
+						size="large"
+						class="select"
+					>
+						<el-option
+							v-for="(item, idx) in ingredients"
+							:key="idx"
+							:label="item.strIngredient1"
+							:value="item.strIngredient1"
+						/>
+					</el-select>
+				</div>
 			</div>
 		</div>
 	</AppLayout>
