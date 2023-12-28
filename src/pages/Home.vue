@@ -49,4 +49,10 @@ const ingredient = ref(null);
 .info
 	padding: 5rem 0
 	text-align: center
+
+.select-wrapper
+	padding-top: 3.125rem
+
+.select
+	width: 13.75rem
 </style>
