@@ -8,8 +8,12 @@ const rootStore = useRootStore();
 
 rootStore.getIngredients();
 
-const { ingredients } = storeToRefs(rootStore);
+const { ingredients, cocktails } = storeToRefs(rootStore);
 const ingredient = ref(null);
+
+function getCocktails() {
+	rootStore.getCocktails(String(ingredient.value));
+}
 </script>
 
 <template>
@@ -24,6 +28,7 @@ const ingredient = ref(null);
 						placeholder="Choose main ingredient"
 						size="large"
 						class="select"
+						@change="getCocktails"
 					>
 						<el-option
 							v-for="(item, idx) in ingredients"
